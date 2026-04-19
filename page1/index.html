@@ -9,8 +9,8 @@
 	<label for="nam">Name </label>  
     <input type="text" id="name" placeholder="first name">
     <br><br>
-	<label for="cn">Contact Number </label>  
-    <input type="text" id="pn" placeholder="optional">
+	<label for="location">Location </label>  
+    <input type="text" id="loc" >
     <br>
 	<br>
     <button onclick=checkform()>SUBMIT</button>
@@ -26,11 +26,12 @@
 	function checkform()
 	{
 		let n=document.getElementById("name").value;
+		let loc=document.getElementById("loc").value;
+
 		
-		
-		if(n=="")
+		if(n=="" || loc=="")
 		{
-			alert("Name must not be empty!!!");
+			alert("Fill all the fields to proceed!");
 		}
 		else
 		{
@@ -49,12 +50,14 @@ function nextImg()
 {
 	document.getElementById("Img").src="https://media.istockphoto.com/id/181075945/photo/satellite-and-planet.jpg?s=612x612&w=0&k=20&c=SwvAUFvpzar6OFqGoiAqL2TKL5JJ5783mfDMiuE9Pfw=";
 
+ document.getElementById("next").style.display = "none";
 document.getElementById("prev").style.display = "inline";
 }
 
 function prevImg()
 {
 	document.getElementById("Img").src="https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2022/04/earth/24035530-2-eng-GB/Earth.jpg";
+  document.getElementById("next").style.display = "inline";
 }
 </script>
   </body>
