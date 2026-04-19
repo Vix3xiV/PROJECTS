@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <title>Form</title>    
+  </head>
+
+  <body style="background-color: #020403; color: blue">
+	<label for="nam">Name </label>  
+    <input type="text" id="name" placeholder="first name">
+    <br><br>
+	<label for="cn">Contact Number </label>  
+    <input type="text" id="pn" placeholder="optional">
+    <br>
+	<br>
+    <button onclick=checkform()>SUBMIT</button>
+<br><br>
+
+	<button id="rev" style="display:none;" onclick=showImage()>Click To Reveal</button>
+	
+	<img id="Img" src="https://i.pinimg.com/736x/02/8c/11/028c119c394a4be55c5991d4dc0e17ff.jpg" style="display:none;">
+	<button onclick=prevImg() style="display:none;" id="prev">Prev</button>
+	<button onclick=nextImg() style="display:none;" id="next" >Next</button>
+	
+<script>
+	function checkform()
+	{
+		let n=document.getElementById("name").value;
+		
+		
+		if(n=="")
+		{
+			alert("Name must not be empty!!!");
+		}
+		else
+		{
+			document.getElementById("rev").style.display = "inline";
+      						
+		}
+	}
+function showImage()
+{
+    document.getElementById("Img").style.display = "block";
+    
+    document.getElementById("next").style.display = "inline";
+
+}
+function nextImg()
+{
+	document.getElementById("Img").src="https://media.istockphoto.com/id/181075945/photo/satellite-and-planet.jpg?s=612x612&w=0&k=20&c=SwvAUFvpzar6OFqGoiAqL2TKL5JJ5783mfDMiuE9Pfw=";
+
+document.getElementById("prev").style.display = "inline";
+}
+
+function prevImg()
+{
+	document.getElementById("Img").src="https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2022/04/earth/24035530-2-eng-GB/Earth.jpg";
+}
+</script>
+  </body>
+</html>
